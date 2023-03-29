@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CrashDetector : MonoBehaviour
+public class FinishLine : MonoBehaviour
 {
     [SerializeField] float Delay = 2f;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Ground")
+        if(collision.tag == "Player")
         {
-            Invoke("ReloadScene", Delay);
-        }   
+            Invoke("ReloadScene",Delay);
+        }
     }
 
     private void ReloadScene()
